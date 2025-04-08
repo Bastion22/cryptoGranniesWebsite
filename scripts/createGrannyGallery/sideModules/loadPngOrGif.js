@@ -20,7 +20,4 @@ export function loadPngOrGif(grannyImageElement, grannyImageBasePath) {
         // Load GIF into Image Element
         grannyImageElement.src = `${grannyImageBasePath}.gif`
     }
-
-    // // Add Lazy Loading
-    // grannyImageElement.setAttribute('loading', 'lazy')
 }
