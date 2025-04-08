@@ -11,13 +11,16 @@ export function loadPngOrGif(grannyImageElement, grannyImageBasePath) {
     img.onload = () => {
 
         // Load PNG into Image Element
-        grannyImageElement.src = `${grannyImageBasePath}.png`
+        grannyImageElement.dataset.src = `${grannyImageBasePath}.png`
     }
 
     // Image Failed to Load
     img.onerror = () => {
 
         // Load GIF into Image Element
-        grannyImageElement.src = `${grannyImageBasePath}.gif`
+        grannyImageElement.dataset.src = `${grannyImageBasePath}.gif`
     }
+
+    // Add Lazy Loading
+    grannyImage.setAttribute('loading', 'lazy')
 }
