@@ -22,5 +22,5 @@ export function loadPngOrGif(grannyImageElement, grannyImageBasePath) {
     }
 
     // Add Lazy Loading
-    grannyImage.setAttribute('loading', 'lazy')
+    grannyImageElement.setAttribute('loading', 'lazy')
 }
