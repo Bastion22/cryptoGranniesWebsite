@@ -36,14 +36,16 @@ function loadGrannyGallery() {
         // Specify Granny Image Base Path
         let grannyImageBasePath = `images/grannyImages/${grannyIndex}`
 
-        // // Set srcset with Multiple image Sizes
-        // grannyImage.setAttribute('srcset', `${grannyImageBasePath}-500.jpg 500w, ${grannyImageBasePath}-800.jpg 800w, ${grannyImageBasePath}-1000.jpg 1000w`)
-
-        // // Specify sizes for Responsive images
-        // grannyImage.setAttribute('sizes', '(max-width: 500px) 500px, (max-width: 800px) 800px, 1000px')
-
-        // // Set the fallback image (largest size)
-        // grannyImage.setAttribute('src', `${grannyImageBasePath}-1000.jpg`)
+        // Resize Image
+        grannyImage.onload = function() {
+            // Resize image by setting a max width
+            const maxWidth = 25; // Example: max width is 300px
+            if (grannyImage.width > maxWidth) {
+                const scaleFactor = maxWidth / grannyImage.width;
+                grannyImage.width = maxWidth;
+                grannyImage.height = grannyImage.height * scaleFactor;
+            }
+        }
 
         // Load PNG or GIF
         loadPngOrGif(grannyImage, grannyImageBasePath)
