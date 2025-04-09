@@ -46,7 +46,10 @@ async function loadGrannyGallery() {
         grannyGrid.appendChild(grannyContainer)
 
         // Sleep
-        await sleeper(75)
+        await sleeper(70)
+
+        // Add Loaded Class after Sleep
+        grannyContainer.classList.add('loaded')
     }
 }
 
