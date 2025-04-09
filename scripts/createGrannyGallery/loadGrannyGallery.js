@@ -1,10 +1,10 @@
 
 import { createRandomIndexArray } from './sideModules/createRandomIndexArray.js'
 import { loadPngOrGif } from './sideModules/loadPngOrGif.js'
-
+import { sleeper } from '../global/utilities/sleeper.js'
 
 // Function to load Crypto Grannies dynamically in random order
-function loadGrannyGallery() {
+async function loadGrannyGallery() {
 
     // Grab Grid
     const grannyGrid = document.getElementById('grannyGrid')
@@ -44,6 +44,9 @@ function loadGrannyGallery() {
 
         // Add the grid item to the grid container
         grannyGrid.appendChild(grannyContainer)
+
+        // Sleep
+        await sleeper(50)
     }
 }
 
