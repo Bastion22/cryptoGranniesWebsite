@@ -36,17 +36,6 @@ function loadGrannyGallery() {
         // Specify Granny Image Base Path
         let grannyImageBasePath = `images/grannyImages/${grannyIndex}`
 
-        // Resize Image
-        grannyImage.onload = function() {
-            // Resize image by setting a max width
-            const maxWidth = 25; // Example: max width is 300px
-            if (grannyImage.width > maxWidth) {
-                const scaleFactor = maxWidth / grannyImage.width;
-                grannyImage.width = maxWidth;
-                grannyImage.height = grannyImage.height * scaleFactor;
-            }
-        }
-
         // Load PNG or GIF
         loadPngOrGif(grannyImage, grannyImageBasePath)
 
