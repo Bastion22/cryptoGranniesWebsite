@@ -29,8 +29,7 @@ body {
     transform: translateX(-50%);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    column-gap: 15px;
-    row-gap: 15px;
+    gap: 15px;
     margin-top: 30px;
     margin-bottom: 15px;
     width: 90%;
@@ -56,7 +55,6 @@ body {
 .grannyImage {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     transform: scale(0.95);
     transition: transform 0.075s linear;
 }
@@ -107,7 +105,5 @@ body {
     #grannyGrid {
         top: 105px;
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        column-gap: 12.5px;
-        row-gap: 12.5px;
     }
 }
