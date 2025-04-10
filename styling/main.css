@@ -29,7 +29,8 @@ body {
     transform: translateX(-50%);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    gap: 15px;
+    column-gap: 15px;
+    row-gap: 15px;
     margin-top: 30px;
     margin-bottom: 15px;
     width: 90%;
@@ -106,5 +107,7 @@ body {
     #grannyGrid {
         top: 105px;
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        column-gap: 12.5px;
+        row-gap: 12.5px;
     }
 }
