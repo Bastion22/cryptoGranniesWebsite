@@ -39,8 +39,48 @@ async function loadGrannyGallery() {
         // Load PNG or GIF
         loadPngOrGif(grannyImage, grannyImageBasePath)
 
-        // Append image to the grid item
+        // Create a Container for the Like Icon (SVG)
+        const likeIconContainer = document.createElement('div')
+        likeIconContainer.classList.add('likeIconContainer')
+
+        // Fetch and load the SVG Like Icon
+        fetch('images/icons/likeEmpty.svg')
+            .then(res => res.text())
+            .then(svgText => {
+                likeIconContainer.innerHTML = svgText;
+
+                // Grab the path element inside the SVG
+                const path = likeIconContainer.querySelector('path');
+
+                if (path) {
+                    // Apply pointer-events to make both the fill and outline clickable
+                    path.setAttribute('pointer-events', 'all');
+                    path.style.cursor = 'pointer';
+
+                    path.setAttribute('fill', 'transparent');  // Optional: Make the heart's body transparent but clickable
+                }
+            });
+
+        // // Create Empty Like Icon Image
+        // const likeIconEmptyImage = document.createElement('img')
+
+        // // Add Class for Empty Like Icon
+        // likeIconEmptyImage.classList.add('likeIconEmpty')
+
+        // // Set Loading Lazy
+        // likeIconEmptyImage.setAttribute('loading', 'lazy')
+
+        // // Load Image
+        // likeIconEmptyImage.src = `images/icons/likeEmpty.svg`
+
+        // Append Granny image to the grid item
         grannyContainer.appendChild(grannyImage)
+
+        // // Append Like Icon to the grid item
+        // grannyContainer.appendChild(likeIconEmptyImage)
+
+        // Append Like Icon (SVG) to the grid item
+        grannyContainer.appendChild(likeIconContainer)
 
         // Add the grid item to the grid container
         grannyGrid.appendChild(grannyContainer)

@@ -1,0 +1,107 @@
+
+
+@import '/styling/others/walletIcon.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
+
+
+body {
+    background-color: #444444;
+}
+
+#cryptoGranniesHeader {
+    position: absolute;
+    left: -5px;
+    width: 100%;
+    top: 15px;
+    font-family: "Micro 5", sans-serif;
+    font-size: 65px;
+    color: #ececec;
+    text-align: center;
+}
+
+
+#grannyGrid {
+    position: absolute;
+    left: 50%;
+    top: 135px;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+
+.grannyContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.085s ease-in, box-shadow 0.065s ease-in;
+}
+
+.grannyContainer.loaded {
+    opacity: 1;
+}
+
+.grannyContainer:hover {
+    box-shadow: 0px 0px 27px rgba(0, 0, 0, 0.47);
+}
+
+.grannyImage {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.95);
+    transition: transform 0.075s linear;
+}
+
+.grannyContainer:hover .grannyImage {
+    transform: scale(1);
+}
+
+
+.likeIconContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    pointer-events: auto;  /* Allow interaction */
+    opacity: 0;   /* Start with hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    filter: drop-shadow(0px 2.5px 5px rgba(0, 0, 0, 1));
+}
+
+.likeIconContainer path:hover {
+    cursor: pointer;
+}
+
+
+.grannyContainer:hover .likeIconContainer {
+    opacity: 1;
+}
+
+@media screen and (max-width: 780px) {
+
+    #cryptoGranniesHeader {
+        left: 40px;
+        width: auto;
+        top: 15px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    #cryptoGranniesHeader {
+        top: 25px;
+        font-size: 40px;
+    }
+
+    #grannyGrid {
+        top: 105px;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
