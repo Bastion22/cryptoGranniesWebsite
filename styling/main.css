@@ -38,8 +38,8 @@ body {
 
 .grannyContainer {
     position: relative;
-    height: 100%;
     width: 100%;
+    aspect-ratio: 1 / 1;
     opacity: 0;
     transition: opacity 0.085s ease-in, box-shadow 0.065s ease-in;
 }
@@ -55,7 +55,7 @@ body {
 .grannyImage {
     width: 100%;
     height: 100%;
-    aspect-ratio: 1 / 1;
+    object-fit: cover;
     transform: scale(0.95);
     transition: transform 0.075s linear;
 }
