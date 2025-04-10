@@ -28,8 +28,10 @@ body {
     top: 135px;
     transform: translateX(-50%);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    gap: 15px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 175px);
+    column-gap: 15px;
+    row-gap: 15px;
     margin-top: 30px;
     margin-bottom: 15px;
     width: 90%;
@@ -38,8 +40,9 @@ body {
 
 .grannyContainer {
     position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
+    max-width: 200px;
+    max-height: 200px;
+    /* aspect-ratio: 1 / 1; */
     opacity: 0;
     transition: opacity 0.085s ease-in, box-shadow 0.065s ease-in;
 }
@@ -85,13 +88,18 @@ body {
     opacity: 1;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 830px) {
 
     #cryptoGranniesHeader {
         left: 7.5%;
         width: auto;
-        top: 15px;
+        font-size: 60px;
+        /* top: 14px; */
         letter-spacing: -0.5px;
+    }
+
+    #grannyGrid {
+        grid-template-columns: repeat(auto-fill, 125px);
     }
 }
 
@@ -104,6 +112,8 @@ body {
 
     #grannyGrid {
         top: 105px;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fill, 95px);
+        column-gap: 12.5px;
+        row-gap: 12.5px;
     }
 }
