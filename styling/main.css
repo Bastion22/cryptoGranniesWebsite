@@ -11,7 +11,7 @@ body {
 
 #cryptoGranniesHeader {
     position: absolute;
-    left: -5px;
+    left: 0;
     width: 100%;
     top: 15px;
     font-family: "Micro 5", sans-serif;
@@ -111,8 +111,8 @@ body {
 @media screen and (max-width: 540px) {
 
     #cryptoGranniesHeader {
-        top: 16px;
-        font-size: 47px;
+        top: 20px;
+        font-size: 43px;
     }
 
     #grannyGrid {

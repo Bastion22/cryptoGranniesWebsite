@@ -21,12 +21,23 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 830px) {
+
+    #walletContainer {
+
+        top: 60px;
+        width: 39px;
+        height: 39px;
+    }
+
+}
+
 @media screen and (max-width: 540px) {
 
     #walletContainer {
 
         top: 52px;
-        width: 31px;
-        height: 31px;
+        width: 30px;
+        height: 30px;
     }
 }
