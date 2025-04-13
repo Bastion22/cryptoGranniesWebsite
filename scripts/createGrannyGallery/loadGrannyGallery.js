@@ -2,6 +2,7 @@
 import { createRandomIndexArray } from './sideModules/createRandomIndexArray.js'
 import { loadPngOrGif } from './sideModules/loadPngOrGif.js'
 import { sleeper } from '../global/utilities/sleeper.js'
+import { addLikeButtonWithFunctionality } from './sideModules/likeButton/addLikeButtonWithFunctionality.js'
 
 // Function to load Crypto Grannies dynamically in random order
 async function loadGrannyGallery() {
@@ -41,46 +42,27 @@ async function loadGrannyGallery() {
 
         // Create a Container for the Like Icon (SVG)
         const likeIconContainer = document.createElement('div')
+
+        // Create a Container for the Loading GIF
+        const loadingIconContainer = document.createElement('div')
+
+        // Add Class for Like Container
         likeIconContainer.classList.add('likeIconContainer')
 
-        // Fetch and load the SVG Like Icon
-        fetch('images/icons/likeEmpty.svg')
-            .then(res => res.text())
-            .then(svgText => {
-                likeIconContainer.innerHTML = svgText;
+        // Add Class for Loading Container
+        loadingIconContainer.classList.add('loadingIconContainer')
 
-                // Grab the path element inside the SVG
-                const path = likeIconContainer.querySelector('path');
-
-                if (path) {
-                    // Apply pointer-events to make both the fill and outline clickable
-                    path.setAttribute('pointer-events', 'all');
-                    path.style.cursor = 'pointer';
-
-                    path.setAttribute('fill', 'transparent');  // Optional: Make the heart's body transparent but clickable
-                }
-            });
-
-        // // Create Empty Like Icon Image
-        // const likeIconEmptyImage = document.createElement('img')
-
-        // // Add Class for Empty Like Icon
-        // likeIconEmptyImage.classList.add('likeIconEmpty')
-
-        // // Set Loading Lazy
-        // likeIconEmptyImage.setAttribute('loading', 'lazy')
-
-        // // Load Image
-        // likeIconEmptyImage.src = `images/icons/likeEmpty.svg`
+        // Add Like Button with Functionality
+        await addLikeButtonWithFunctionality(grannyIndex, likeIconContainer, loadingIconContainer)
 
         // Append Granny image to the grid item
         grannyContainer.appendChild(grannyImage)
 
-        // // Append Like Icon to the grid item
-        // grannyContainer.appendChild(likeIconEmptyImage)
-
         // Append Like Icon (SVG) to the grid item
         grannyContainer.appendChild(likeIconContainer)
+
+        // Append Loading GIF to the grid item
+        grannyContainer.appendChild(loadingIconContainer)
 
         // Add the grid item to the grid container
         grannyGrid.appendChild(grannyContainer)

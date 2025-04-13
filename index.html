@@ -3,6 +3,8 @@
 <html>
     <head>
 
+        <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
+
         <!-- Page Title -->
         <title>Crypto Grannies</title>
 
@@ -19,11 +21,19 @@
 
     <body>
 
+        <!-- Wallet Connect Container -->
         <div id="walletContainer">
 
+            <!-- Wallet Connect Image -->
             <img id="walletImage" src="images/icons/connectWallet.png" alt="">
 
+            <!-- Wallet Connection Script -->
+            <script type="module" src="scripts/walletConnection/metamask/connectMetamask.js" defer></script>
+
         </div>
+
+        <!-- Wallet Connection Check Script -->
+        <script type="module" src="scripts/walletConnection/checkIfWalletConnected.js" defer></script>
 
         <!-- Header -->
         <h1 id="cryptoGranniesHeader">CRYPTO GRANNIES</h1>
@@ -33,6 +43,9 @@
 
         <!-- Load Crypto Grannies -->
         <script type="module" src="scripts/createGrannyGallery/loadGrannyGallery.js" defer></script>
+
+        <!-- Like Granny Transaction Script -->
+        <script type="module" src="scripts/transactions/likeGranny.js" defer></script>
         
     </body>
 </html>
